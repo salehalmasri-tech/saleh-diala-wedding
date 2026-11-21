@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>حفل زفاف صالح وديالا</title>
+<meta name="description" content="دعوة حفل زفاف صالح محمد المصري وديالا نبيل عبد القادر — الجمعة ٢٧ تشرين الثاني ٢٠٢٦">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a1024;
+  --ink-2:#121a38;
+  --ink-3:#1b2550;
+  --gold:#d9b85f;
+  --gold-solid:#b29042;
+  --gold-hi:#f4e3ad;
+  --cream:#f6efe0;
+  --muted:#9aa2c0;
+  --wax:#bf9a44;
+  --wax-2:#9a7a2f;
+  --line:rgba(217,184,95,.4);
+  --card:rgba(255,255,255,.045);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'IBM Plex Sans Arabic','Tajawal',sans-serif;
+  background:var(--ink);color:var(--cream);
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+body.locked{overflow:hidden;height:100vh}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(1100px 600px at 50% -10%, rgba(217,184,95,.12), transparent 60%),
+    radial-gradient(800px 500px at 10% 108%, rgba(217,184,95,.07), transparent 60%),
+    radial-gradient(800px 500px at 90% 108%, rgba(217,184,95,.07), transparent 60%);
+}
+.wrap{position:relative;z-index:1;max-width:720px;margin:0 auto;padding:0 20px}
+
+#stars{position:fixed;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.star{position:absolute;border-radius:50%;background:var(--gold-hi);opacity:0;animation:twinkle var(--t,5s) ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(.6)}50%{opacity:var(--o,.7);transform:scale(1)}}
+
+#petals{position:fixed;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.petal{position:absolute;top:-40px;will-change:transform;opacity:.8}
+@keyframes fall{0%{transform:translateY(-40px) translateX(0) rotate(0)}100%{transform:translateY(106vh) translateX(var(--drift)) rotate(var(--spin))}}
+
+#confetti{position:fixed;inset:0;z-index:110;pointer-events:none;display:none}
+
+/* ===== الظرف ===== */
+.env-overlay{
+  position:fixed;inset:0;z-index:100;background:linear-gradient(165deg,#0c1228,#070b1a);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;
+  transition:opacity .8s ease .9s, visibility 0s linear 1.8s;
+}
+.env-overlay::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(820px 480px at 50% 32%, rgba(217,184,95,.16), transparent 64%)}
+.env-overlay.gone{opacity:0;visibility:hidden;pointer-events:none}
+.env-greet{position:relative;text-align:center;color:var(--gold-hi);font-family:'Aref Ruqaa',serif;font-size:1.15rem;line-height:1.9;min-height:1.9em;transition:opacity .4s ease}
+.env-greet b{color:var(--gold)}
+.env-overlay.opening .env-greet{opacity:0}
+.envelope{position:relative;width:min(82vw,360px);aspect-ratio:4/5;perspective:1400px;filter:drop-shadow(0 30px 50px rgba(0,0,0,.6))}
+.flap{position:absolute;top:0;bottom:0;width:50.6%;background:linear-gradient(160deg,#1d2a56 0%,var(--ink-3) 45%,var(--ink-2) 100%);transition:transform 1.15s cubic-bezier(.72,0,.28,1);backface-visibility:hidden}
+.flap.right{right:0;transform-origin:right center;border-radius:0 16px 16px 0;box-shadow:inset 8px 0 20px -10px rgba(0,0,0,.6)}
+.flap.left{left:0;transform-origin:left center;border-radius:16px 0 0 16px;box-shadow:inset -8px 0 20px -10px rgba(0,0,0,.6)}
+.flap::after{content:"";position:absolute;top:12px;bottom:12px;width:1px;background:rgba(244,227,173,.4)}
+.flap.right::after{left:6px}.flap.left::after{right:6px}
+.env-overlay.opening .flap.right{transform:rotateY(150deg)}
+.env-overlay.opening .flap.left{transform:rotateY(-150deg)}
+.env-inner{position:absolute;inset:6%;border-radius:12px;background:linear-gradient(#141c3c,#0d1430);display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.92);transition:opacity .7s ease .55s, transform .7s ease .55s;border:1px solid rgba(217,184,95,.25)}
+.env-overlay.opening .env-inner{opacity:1;transform:scale(1)}
+.seal{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:108px;height:108px;border-radius:50%;border:none;cursor:pointer;z-index:3;
+  background:radial-gradient(circle at 35% 30%, #e7c666 0%, var(--wax) 48%, var(--wax-2) 100%);
+  box-shadow:0 10px 28px rgba(0,0,0,.5), inset 0 2px 7px rgba(255,255,255,.4), inset 0 -5px 12px rgba(0,0,0,.35);
+  color:#2a1f06;display:flex;align-items:center;justify-content:center;
+  animation:pulse 2.4s ease-in-out infinite;transition:transform .5s ease, opacity .5s ease}
+.seal svg{width:46px;height:46px;stroke:#2a1f06;fill:none;stroke-width:1.5}
+.seal::before{content:"";position:absolute;inset:9px;border:1px solid rgba(42,31,6,.4);border-radius:50%}
+.seal::after{content:"";position:absolute;inset:14px;border:1px dashed rgba(42,31,6,.28);border-radius:50%}
+.env-overlay.opening .seal{transform:translate(-50%,-50%) scale(.4) rotate(25deg);opacity:0;animation:none}
+@keyframes pulse{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.06)}}
+.env-hint{position:relative;color:var(--muted);font-size:.95rem;animation:hintFloat 2.4s ease-in-out infinite;transition:opacity .4s ease}
+.env-overlay.opening .env-hint{opacity:0}
+@keyframes hintFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+
+.frame{position:fixed;inset:10px;border:1px solid var(--line);border-radius:18px;pointer-events:none;z-index:5}
+.frame::after{content:"";position:absolute;inset:5px;border:1px solid rgba(217,184,95,.2);border-radius:14px}
+.frame i{position:absolute;width:30px;height:30px;border:1px solid var(--gold);opacity:.55}
+.frame i:nth-child(1){top:-1px;right:-1px;border-left:0;border-bottom:0;border-radius:0 16px 0 0}
+.frame i:nth-child(2){top:-1px;left:-1px;border-right:0;border-bottom:0;border-radius:16px 0 0 0}
+.frame i:nth-child(3){bottom:-1px;right:-1px;border-left:0;border-top:0;border-radius:0 0 16px 0}
+.frame i:nth-child(4){bottom:-1px;left:-1px;border-right:0;border-top:0;border-radius:0 0 0 16px}
+.topline{height:5px;background:linear-gradient(90deg,var(--wax-2),var(--gold-hi),var(--wax-2))}
+.music-btn{position:fixed;bottom:22px;inset-inline-start:22px;z-index:60;width:52px;height:52px;border-radius:50%;border:1px solid var(--line);cursor:pointer;background:rgba(18,26,56,.92);color:var(--gold-hi);box-shadow:0 10px 26px rgba(0,0,0,.4);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;transition:transform .2s ease}
+.music-btn:active{transform:scale(.92)}.music-btn svg{width:24px;height:24px}
+.opened .music-btn{display:flex}
+
+/* ===== البطل ===== */
+.hero{padding:56px 0 8px;text-align:center;position:relative}
+.bismillah{font-family:'Amiri',serif;font-size:1.18rem;color:var(--gold-hi);opacity:0}
+.greet-in{margin-top:20px;font-family:'Aref Ruqaa',serif;font-size:1.15rem;color:var(--gold);min-height:1.4em;opacity:0}
+.verse{font-family:'Amiri',serif;font-size:1rem;color:var(--muted);margin:14px auto 0;line-height:2.3;max-width:34rem;opacity:0}
+.emblem{width:90px;height:90px;margin:28px auto 0;color:var(--gold-hi);opacity:0;filter:drop-shadow(0 6px 16px rgba(0,0,0,.4))}
+.emblem svg{width:100%;height:100%}
+.intro{margin-top:24px;font-weight:300;font-size:1.06rem;line-height:2.1;opacity:0}
+.names{margin-top:14px;opacity:0}
+.names .nm{
+  font-family:'Aref Ruqaa',serif;font-size:clamp(2rem,8.5vw,3.1rem);line-height:1.8;
+  padding:.1em .15em .2em;display:inline-block;
+  background:linear-gradient(100deg,var(--wax-2) 0%,var(--gold-hi) 42%,var(--gold) 58%,var(--gold-hi) 100%);
+  background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.names .amp{display:block;font-family:'Amiri',serif;font-style:italic;color:var(--gold);font-size:1.4rem;margin:2px 0}
+.name-sub{margin-top:8px;color:var(--muted);font-size:1rem;letter-spacing:.08em;opacity:0}
+.date-line{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:22px;font-size:1.05rem;font-weight:500;color:var(--cream);opacity:0}
+.date-line::before,.date-line::after{content:"";width:50px;height:1px;background:linear-gradient(90deg,transparent,var(--line))}
+.date-line::after{background:linear-gradient(90deg,var(--line),transparent)}
+.hijri{margin-top:6px;color:var(--muted);font-size:.9rem;opacity:0}
+.rings{margin-top:20px;font-size:1.55rem;opacity:0}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes shine{to{background-position:220% center}}
+.opened .bismillah{animation:rise .9s .15s ease forwards}
+.opened .greet-in{animation:rise .9s .35s ease forwards}
+.opened .verse{animation:rise .9s .55s ease forwards}
+.opened .emblem{animation:rise 1s .75s ease forwards}
+.opened .intro{animation:rise .9s .95s ease forwards}
+.opened .names{animation:rise 1s 1.1s ease both}
+.opened .names .nm{animation:shine 7s linear infinite}
+.opened .name-sub{animation:rise .9s 1.35s ease forwards}
+.opened .date-line{animation:rise .9s 1.5s ease forwards}
+.opened .hijri{animation:rise .9s 1.6s ease forwards}
+.opened .rings{animation:rise .9s 1.7s ease forwards}
+
+.orn{display:flex;justify-content:center;margin:44px 0 0;color:var(--gold)}
+.orn svg{width:200px;height:30px}
+
+.count-title{text-align:center;margin-top:12px;color:var(--gold-hi);font-family:'Aref Ruqaa',serif;font-size:1.45rem}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px;direction:ltr}
+.cd-cell{position:relative;background:var(--card);border-radius:16px;padding:16px 6px;text-align:center;backdrop-filter:blur(6px)}
+.cd-cell::before{content:"";position:absolute;inset:0;border-radius:16px;padding:1px;background:linear-gradient(160deg,var(--gold-hi),rgba(217,184,95,.25),var(--gold));-webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.cd-num{font-size:clamp(1.6rem,7vw,2.3rem);font-weight:700;color:var(--gold-hi);font-variant-numeric:tabular-nums;line-height:1.1}
+.cd-lab{font-size:.75rem;color:var(--muted);margin-top:6px}
+.count-done{text-align:center;margin-top:16px;font-family:'Aref Ruqaa',serif;font-size:1.6rem;color:var(--gold-hi);display:none}
+
+.divider{display:flex;align-items:center;gap:14px;margin:52px 0 0;color:var(--gold)}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
+.divider span{font-family:'Aref Ruqaa',serif;font-size:1.35rem;color:var(--gold-hi);white-space:nowrap}
+.details{display:grid;gap:14px;margin-top:24px}
+@media(min-width:560px){.details{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid rgba(217,184,95,.22);border-radius:20px;padding:22px;position:relative;overflow:hidden;backdrop-filter:blur(6px)}
+.card::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:3px;background:linear-gradient(var(--gold-solid),var(--gold-hi))}
+.card h3{display:flex;align-items:center;gap:10px;font-size:.95rem;color:var(--gold-hi);font-weight:600;margin-bottom:10px}
+.card h3 svg{width:19px;height:19px;flex:none;stroke:var(--gold);fill:none;stroke-width:1.7}
+.card p{font-size:1.05rem;line-height:1.9}
+.card .sub{font-size:.9rem;color:var(--muted);margin-top:4px}
+
+/* بطاقة عدد المدعوين */
+.seats{margin-top:26px;text-align:center;border:1px solid var(--line);border-radius:20px;padding:26px 20px;position:relative;
+  background:radial-gradient(400px 160px at 50% 0%, rgba(217,184,95,.12), transparent 70%),var(--card);backdrop-filter:blur(6px);display:none}
+.seats.show{display:block}
+.seats .eyebrow{font-size:.8rem;letter-spacing:.25em;color:var(--muted);margin-bottom:12px}
+.seats .num{font-family:'Aref Ruqaa',serif;font-size:3rem;line-height:1;color:var(--gold-hi)}
+.seats .txt{margin-top:10px;color:var(--cream);font-size:1rem}
+
+/* تنويه */
+.notice{margin-top:22px;border:1px dashed var(--line);border-radius:18px;padding:16px 20px;background:rgba(217,184,95,.06);text-align:center}
+.notice p{line-height:1.9;font-size:.98rem;color:var(--cream)}
+.notice b{color:var(--gold-hi)}
+
+.actions{display:grid;gap:12px;margin-top:20px}
+@media(min-width:560px){.actions{grid-template-columns:1fr 1fr}}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px 20px;border-radius:16px;text-decoration:none;font-weight:600;font-size:1rem;transition:transform .2s ease}
+.btn:active{transform:scale(.97)}
+.btn-gold{background:linear-gradient(120deg,var(--wax-2),var(--gold),var(--gold-hi));color:#1a1204;box-shadow:0 12px 30px rgba(217,184,95,.22)}
+.btn-line{border:1px solid var(--line);color:var(--gold-hi);background:rgba(217,184,95,.06)}
+.btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8}
+
+footer{margin-top:56px;padding:40px 20px 60px;text-align:center;border-top:1px solid rgba(217,184,95,.2);background:radial-gradient(520px 200px at 50% 0%, rgba(217,184,95,.08), transparent 70%)}
+footer .closing{font-family:'Aref Ruqaa',serif;font-size:clamp(1.6rem,7vw,2.2rem);color:var(--gold-hi)}
+footer .fam{margin-top:10px;color:var(--muted);font-size:.95rem}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal,.bismillah,.greet-in,.verse,.emblem,.intro,.names,.name-sub,.date-line,.hijri,.rings{opacity:1;transform:none}
+  .env-overlay{display:none}.music-btn{display:flex}#petals,#stars{display:none}
+}
+</style>
+</head>
+<body class="locked">
+
+<div id="stars"></div>
+<div id="petals"></div>
+
+<div class="env-overlay" id="env">
+  <p class="env-greet" id="envGreet"></p>
+  <div class="envelope">
+    <div class="env-inner">
+      <svg viewBox="0 0 64 44" width="80" height="55" fill="none" stroke="#f4e3ad" stroke-width="1.3" aria-hidden="true">
+        <circle cx="26" cy="26" r="13"/><circle cx="40" cy="22" r="13"/>
+        <path d="M33 2 l1.8 4 4.2 .4 -3.2 2.9 1 4.2 -3.8-2.3 -3.8 2.3 1-4.2 -3.2-2.9 4.2-.4 Z" fill="#f4e3ad" stroke="none"/>
+      </svg>
+    </div>
+    <div class="flap left"></div>
+    <div class="flap right"></div>
+    <button class="seal" id="sealBtn" aria-label="افتح الدعوة">
+      <svg viewBox="0 0 24 24"><circle cx="9" cy="13" r="5.2"/><circle cx="15.5" cy="10.5" r="5.2"/></svg>
+    </button>
+  </div>
+  <p class="env-hint">اضغط على الختم لفتح الدعوة</p>
+</div>
+
+<canvas id="confetti"></canvas>
+
+<audio id="bgm" src="music.mp3" loop preload="auto"></audio>
+<button class="music-btn" id="musicBtn" aria-label="تشغيل/إيقاف الموسيقى">
+  <svg id="icOn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10v4h4l5 4V6l-5 4H4z" fill="currentColor" stroke="none"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+  <svg id="icOff" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="display:none"><path d="M4 10v4h4l5 4V6l-5 4H4z" fill="currentColor" stroke="none"/><path d="M17 9l5 6M22 9l-5 6"/></svg>
+</button>
+
+<div class="frame"><i></i><i></i><i></i><i></i></div>
+<div class="topline"></div>
+
+<main class="wrap">
+  <header class="hero">
+    <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+    <p class="greet-in" id="greetIn"></p>
+    <p class="verse">﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ﴾</p>
+
+    <div class="emblem" aria-hidden="true">
+      <svg viewBox="0 0 64 54" fill="none" stroke="currentColor" stroke-width="1.3">
+        <circle cx="26" cy="34" r="14"/><circle cx="40" cy="28" r="14"/>
+        <path d="M33 2 l2 4.5 5 .5 -3.7 3.4 1.1 4.9 -4.4-2.6 -4.4 2.6 1.1-4.9 -3.7-3.4 5-.5 Z" fill="currentColor" stroke="none"/>
+      </svg>
+    </div>
+
+    <p class="intro">بقلوبٍ يملؤها الحبّ والسرور<br>نتشرّف بدعوتكم لحضور حفل زفاف</p>
+    <div class="names">
+      <span class="nm">صالح محمد المصري</span>
+      <span class="amp">&</span>
+      <span class="nm">ديالا نبيل عبد القادر</span>
+    </div>
+    <p class="name-sub">بإذن الله تعالى</p>
+
+    <p class="date-line">الجمعة ٢٧ تشرين الثاني ٢٠٢٦</p>
+    <p class="hijri">27 . 11 . 2026</p>
+    <p class="rings">💍</p>
+  </header>
+
+  <div class="orn" aria-hidden="true">
+    <svg viewBox="0 0 200 30" fill="none" stroke="currentColor" stroke-width="1">
+      <path d="M0 15 H74 M126 15 H200"/>
+      <path d="M100 4 C106 9,106 21,100 26 C94 21,94 9,100 4 Z"/>
+      <path d="M82 15 C86 11,92 11,94 15 C92 19,86 19,82 15 Z"/>
+      <path d="M118 15 C114 11,108 11,106 15 C108 19,114 19,118 15 Z"/>
+    </svg>
+  </div>
+
+  <section aria-label="العد التنازلي">
+    <h2 class="count-title">باقي على الفرحة</h2>
+    <div class="countdown" id="cd">
+      <div class="cd-cell"><div class="cd-num" id="d">--</div><div class="cd-lab">يوم</div></div>
+      <div class="cd-cell"><div class="cd-num" id="h">--</div><div class="cd-lab">ساعة</div></div>
+      <div class="cd-cell"><div class="cd-num" id="m">--</div><div class="cd-lab">دقيقة</div></div>
+      <div class="cd-cell"><div class="cd-num" id="s">--</div><div class="cd-lab">ثانية</div></div>
+    </div>
+    <p class="count-done" id="cdDone">اليوم يوم الفرح 💍</p>
+  </section>
+
+  <div class="divider reveal"><span>تفاصيل الحفل</span></div>
+
+  <section class="details reveal">
+    <div class="card">
+      <h3><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>التاريخ</h3>
+      <p>الجمعة ٢٧ تشرين الثاني ٢٠٢٦</p>
+      <p class="sub">27 / 11 / 2026</p>
+    </div>
+    <div class="card">
+      <h3><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>الوقت</h3>
+      <p>الساعة ٧:٠٠ مساءً</p>
+    </div>
+    <div class="card" style="grid-column:1/-1">
+      <h3><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>الموقع</h3>
+      <p>قاعة جبري</p>
+    </div>
+  </section>
+
+  <!-- عدد الأشخاص المدعوين (مشفّر عبر الرابط) -->
+  <section class="seats reveal" id="seats" aria-label="عدد المدعوين">
+    <p class="eyebrow">بطاقة الدعوة</p>
+    <div class="num" id="seatsNum">—</div>
+    <p class="txt" id="seatsTxt"></p>
+  </section>
+
+  <!-- تنويه -->
+  <section class="notice reveal" aria-label="تنويه">
+    <p>🤍 نعتذر عن <b>عدم اصطحاب الأطفال</b></p>
+  </section>
+
+  <div class="actions reveal">
+    <a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&query=%D9%82%D8%A7%D8%B9%D8%A9+%D8%AC%D8%A8%D8%B1%D9%8A" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+      الوصول عبر خرائط جوجل
+    </a>
+    <a class="btn btn-line" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%D8%AD%D9%81%D9%84+%D8%B2%D9%81%D8%A7%D9%81+%D8%B5%D8%A7%D9%84%D8%AD+%D9%88%D8%AF%D9%8A%D8%A7%D9%84%D8%A7+%F0%9F%92%8D&dates=20261127T160000Z/20261127T200000Z&details=%D8%AD%D9%81%D9%84+%D8%B2%D9%81%D8%A7%D9%81+%D8%B5%D8%A7%D9%84%D8%AD+%D9%85%D8%AD%D9%85%D8%AF+%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A+%D9%88%D8%AF%D9%8A%D8%A7%D9%84%D8%A7+%D9%86%D8%A8%D9%8A%D9%84+%D8%B9%D8%A8%D8%AF+%D8%A7%D9%84%D9%82%D8%A7%D8%AF%D8%B1+-+%D9%82%D8%A7%D8%B9%D8%A9+%D8%AC%D8%A8%D8%B1%D9%8A+-+%D8%A7%D9%84%D8%B3%D8%A7%D8%B9%D8%A9+7+%D9%85%D8%B3%D8%A7%D8%A1%D9%8B&location=%D9%82%D8%A7%D8%B9%D8%A9+%D8%AC%D8%A8%D8%B1%D9%8A" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4M12 14v4M10 16h4"/></svg>
+      أضِف إلى التقويم
+    </a>
+  </div>
+</main>
+
+<footer>
+  <p class="closing">أفراحنا تزداد بحضوركم</p>
+  <p class="fam">عائلتا المصري وعبد القادر ترحّبان بكم 🤍</p>
+</footer>
+
+<script>
+const params=new URLSearchParams(location.search);
+
+/* ===== عدد المدعوين — مشفّر عبر رمز غير مفهوم للقارئ ===== */
+/* كل رمز في الرابط ?d=XXXX يقابل عدداً معيناً. الرموز تبدو عشوائية
+   حتى لا يفهمها الضيف أو يعدّلها. */
+const SEAT_CODES={
+  "q7f3a9":1, "ka4m2x":1, "ze8n5t":1,
+  "m3p8x4":2, "w9b2k7":2, "t5z1q6":2,
+  "p5t1z6":3, "x4m9c2":3, "n7k3w8":3,
+  "w9n3b7":4, "b2q6m1":4, "c8x4t5":4
+};
+const AR=['','١','٢','٣','٤','٥','٦','٧','٨','٩','١٠'];
+const seatCode=(params.get('d')||params.get('inv')||'').trim();
+if(seatCode && SEAT_CODES[seatCode]!==undefined){
+  const n=SEAT_CODES[seatCode];
+  const sec=document.getElementById('seats');
+  document.getElementById('seatsNum').textContent=AR[n];
+  document.getElementById('seatsTxt').textContent = n===1 ? 'الدعوة لشخصٍ واحد' : ('الدعوة لعدد '+AR[n]+' أشخاص');
+  sec.classList.add('show');
+}
+
+/* ===== تخصيص اسم المدعو ?g=الاسم ===== */
+const guest=(params.get('g')||params.get('guest')||'').trim().replace(/[<>]/g,'');
+if(guest){
+  document.getElementById('envGreet').innerHTML='دعوة خاصة إلى<br><b>'+guest+'</b>';
+  document.getElementById('greetIn').textContent='أهلاً وسهلاً بـ '+guest;
+}else{
+  document.getElementById('envGreet').innerHTML='دعوة زفاف<br><b>صالح و ديالا</b>';
+}
+
+/* نجوم متلألئة */
+(function(){
+  const layer=document.getElementById('stars');
+  const N=window.innerWidth<600?26:44;
+  for(let i=0;i<N;i++){
+    const s=document.createElement('div');s.className='star';
+    const sz=1+Math.random()*2.4;
+    s.style.width=s.style.height=sz+'px';
+    s.style.left=Math.random()*100+'vw';s.style.top=Math.random()*100+'vh';
+    s.style.setProperty('--t',(3+Math.random()*5)+'s');
+    s.style.setProperty('--o',(0.4+Math.random()*0.5).toFixed(2));
+    s.style.animationDelay=(-Math.random()*6)+'s';
+    layer.appendChild(s);
+  }
+})();
+
+/* ذرات ذهبية متساقطة */
+(function(){
+  const layer=document.getElementById('petals');
+  const colors=['#f4e3ad','#d9b85f','#b29042','#e7c666','#c9a84e'];
+  const N=window.innerWidth<600?12:18;
+  function leaf(c){return '<svg width="14" height="14" viewBox="0 0 18 18"><path d="M9 1 C13 4,15 9,9 17 C3 9,5 4,9 1 Z" fill="'+c+'"/></svg>';}
+  for(let i=0;i<N;i++){
+    const p=document.createElement('div');p.className='petal';
+    const size=7+Math.random()*10;
+    p.style.left=Math.random()*100+'vw';
+    p.style.setProperty('--drift',(Math.random()*160-80)+'px');
+    p.style.setProperty('--spin',(Math.random()*720-360)+'deg');
+    const dur=10+Math.random()*10;
+    p.style.animation='fall '+dur+'s linear '+(-Math.random()*dur)+'s infinite';
+    p.style.transform='scale('+(size/18)+')';
+    p.innerHTML=leaf(colors[i%colors.length]);
+    layer.appendChild(p);
+  }
+})();
+
+/* الموسيقى */
+const bgm=document.getElementById('bgm'),musicBtn=document.getElementById('musicBtn');
+const icOn=document.getElementById('icOn'),icOff=document.getElementById('icOff');
+function startMusic(){bgm.volume=0;bgm.play().then(()=>{let v=0;const f=setInterval(()=>{v=Math.min(0.65,v+0.05);bgm.volume=v;if(v>=0.65)clearInterval(f);},120);}).catch(()=>{});}
+musicBtn.addEventListener('click',()=>{if(bgm.paused){startMusic();icOn.style.display='block';icOff.style.display='none';}else{bgm.pause();icOn.style.display='none';icOff.style.display='block';}});
+
+/* قصاصات القلوب عند الفتح */
+function burstConfetti(){
+  const cv=document.getElementById('confetti');cv.style.display='block';const ctx=cv.getContext('2d');
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}size();
+  const cols=['#d9b85f','#f4e3ad','#b29042','#e7c666','#9a7a2f','#c9a84e'];
+  let parts=[];
+  for(let i=0;i<130;i++){parts.push({x:innerWidth/2,y:innerHeight/2,vx:(Math.random()-0.5)*11,vy:Math.random()*-13-3,g:0.28+Math.random()*0.14,s:5+Math.random()*6,c:cols[i%cols.length],rot:Math.random()*6.28,vr:(Math.random()-0.5)*0.35});}
+  let frame=0;
+  (function anim(){frame++;ctx.clearRect(0,0,cv.width,cv.height);
+    parts.forEach(p=>{p.vy+=p.g;p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.fillStyle=p.c;const s=p.s;
+      ctx.beginPath();ctx.moveTo(0,-s*0.5);ctx.bezierCurveTo(s*0.5,-s,s,0,0,s);ctx.bezierCurveTo(-s,0,-s*0.5,-s,0,-s*0.5);ctx.fill();ctx.restore();});
+    if(frame<150)requestAnimationFrame(anim);else cv.style.display='none';
+  })();
+  addEventListener('resize',size,{once:true});
+}
+
+/* فتح الظرف */
+const env=document.getElementById('env');
+document.getElementById('sealBtn').addEventListener('click',()=>{
+  if(env.classList.contains('opening'))return;
+  startMusic();env.classList.add('opening');setTimeout(burstConfetti,650);
+  setTimeout(()=>{env.classList.add('gone');document.body.classList.remove('locked');document.body.classList.add('opened');window.scrollTo({top:0});},1250);
+  setTimeout(()=>{env.remove();},2400);
+});
+
+/* العد التنازلي — الجمعة ٢٧ تشرين الثاني ٢٠٢٦ الساعة ٧:٠٠ مساءً بتوقيت عمّان */
+const target=new Date('2026-11-27T19:00:00+03:00').getTime();
+const el={d:document.getElementById('d'),h:document.getElementById('h'),m:document.getElementById('m'),s:document.getElementById('s')};
+function pad(n){return String(n).padStart(2,'0')}
+function tick(){const diff=target-Date.now();if(diff<=0){document.getElementById('cd').style.display='none';document.getElementById('cdDone').style.display='block';return;}
+  el.d.textContent=pad(Math.floor(diff/864e5));el.h.textContent=pad(Math.floor(diff/36e5)%24);el.m.textContent=pad(Math.floor(diff/6e4)%60);el.s.textContent=pad(Math.floor(diff/1e3)%60);
+  requestAnimationFrame(()=>setTimeout(tick,250));}
+tick();
+
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
+</script>
+</body>
+</html>
